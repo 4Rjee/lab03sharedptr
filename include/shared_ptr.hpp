@@ -11,7 +11,7 @@ template <typename T>
 class SharedPtr {
  public:
   SharedPtr();
-  explicit SharedPtr(T* ptr);header.hpp
+  explicit SharedPtr(T* ptr);
   SharedPtr(const SharedPtr& r);
   SharedPtr(SharedPtr&& r) noexcept ;
   ~SharedPtr();
@@ -23,7 +23,7 @@ class SharedPtr {
   auto operator->() const -> T*;
 
   auto get() -> T*;
-  void reset();header.hpp
+  void reset();
   void reset(T* ptr);
   void swap(SharedPtr& r);
   [[nodiscard]] auto use_count() const -> size_t;
@@ -68,7 +68,7 @@ SharedPtr<T>::~SharedPtr() {
   pointer = nullptr;
   counter = nullptr;
 }
-template <typename T>header.hpp
+template <typename T>
 auto SharedPtr<T>::operator=(const SharedPtr& r) -> SharedPtr& {
   if (this == &r) {
     return *this;
