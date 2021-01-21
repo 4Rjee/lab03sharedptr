@@ -80,7 +80,7 @@ auto SharedPtr<T>::operator=(const SharedPtr& r) -> SharedPtr& {
   return *this;
 }
 template <typename T>
-auto SharedPtr<T>::operator=(SharedPtr&& r) -> SharedPtr& {
+auto SharedPtr<T>::operator=(SharedPtr&& r) noexcept -> SharedPtr& {
   if (this == &r) {
     return *this;
   }
